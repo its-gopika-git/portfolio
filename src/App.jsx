@@ -38,8 +38,8 @@ const projects = [
   },
   {
     name: 'Photo Cards',
-    category: 'VISUAL DESIGN',
-    description: 'A mobile photography gallery with image captions, locations, and map links for each shot.',
+    category: 'PHOTO JOURNAL',
+    description: 'A photography journal with 28 mobile photos, editorial captions, location details, and an embedded map for each shot.',
     stack: ['React', 'CSS', 'Photography'],
     demo: 'https://its-gopika-git.github.io/photo-cards/',
     source: 'https://github.com/its-gopika-git/photo-cards',
@@ -47,11 +47,12 @@ const projects = [
 ]
 
 const skillGroups = [
-  ['Frontend', 'React.js, Hooks, Context API, Redux, JavaScript ES6+, HTML5, CSS3, SCSS'],
-  ['UI & accessibility', 'Material-UI, React-Bootstrap, ag-Grid, responsive design, accessibility'],
-  ['Backend & data', 'Java, Spring Boot, REST APIs, SQL, MySQL, PostgreSQL'],
-  ['Testing & delivery', 'Jest, React Testing Library, Enzyme, SonarQube, Git, CI/CD, Agile/Scrum'],
-  ['Security & tools', 'Okta, RBAC, Postman, VS Code, Figma'],
+  ['Frontend', 'React.js (Hooks, Context API, components), Redux, JavaScript ES6+, HTML5, CSS3, SCSS'],
+  ['UI & accessibility', 'Material UI, React-Bootstrap, ag-Grid, responsive design, accessibility (a11y)'],
+  ['Backend & data (learning)', 'Java, Spring Boot, REST APIs, SQL (MySQL, PostgreSQL), joins, aggregations, normalization'],
+  ['Testing & quality', 'Jest, React Testing Library, Enzyme, SonarQube, 90%+ test coverage'],
+  ['Tools & delivery', 'Git, GitHub, CI/CD, Postman, VS Code, Figma, Agile/Scrum'],
+  ['Security', 'Okta authentication, role-based access control (RBAC)'],
 ]
 
 function ProjectCard({ project, index }) {
@@ -94,8 +95,9 @@ function App() {
       <header className="site-header">
         <a className="wordmark" href="#home" aria-label="Gopika, home"><span>g</span>.</a>
         <nav className="main-nav" aria-label="Main navigation">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#resume">Skills</a>
+          <a href="#work">Projects</a>
           <a className="nav-contact" href="#contact">Let’s talk <ArrowUpRight size={15} /></a>
         </nav>
       </header>
@@ -125,26 +127,15 @@ function App() {
           <a className="scroll-cue" href="#work"><span>SCROLL TO EXPLORE</span><ArrowDown size={14} /></a>
         </section>
 
-        <section className="work-section section-wrap" id="work">
-          <div className="section-heading">
-            <div><p className="eyebrow">SELECTED PROJECTS <span className="eyebrow-divider">/</span> 05</p><h2>Made with care<span>.</span></h2></div>
-            <p className="section-note">A few things I’ve been building<br />outside the day job.</p>
-          </div>
-          <div className="project-grid">
-            {projects.map((project, index) => <ProjectCard key={project.name} project={project} index={index} />)}
-          </div>
-        </section>
-
-        <section className="about-section" id="about">
+        <section className="about-section" id="experience">
           <div className="section-wrap about-inner">
             <div className="about-heading">
-              <p className="eyebrow">A LITTLE ABOUT ME</p>
-              <h2>Strong foundations.<br /><span>Always learning.</span></h2>
-              <p className="about-summary">For 5+ years at Tata Consultancy Services, I’ve helped deliver enterprise React applications for CNA Insurance. Now I’m growing my full-stack toolkit with Java, Spring Boot, and SQL.</p>
+              <p className="eyebrow">EXPERIENCE <span className="eyebrow-divider">/</span> 2021—NOW</p>
+              <h2>Building reliable software.<br /><span>With real-world impact.</span></h2>
+              <p className="about-summary">For 5+ years at Tata Consultancy Services, I’ve helped deliver enterprise React applications for CNA Insurance—turning complex insurance workflows into faster, more dependable tools for thousands of users.</p>
               <a className="text-link about-github" href="https://github.com/its-gopika-git" target="_blank" rel="noreferrer">More on GitHub <ArrowUpRight size={16} /></a>
             </div>
             <div className="experience-block">
-              <p className="eyebrow">EXPERIENCE</p>
               <div className="experience-entry">
                 <div className="experience-date">MAR 2021 — PRESENT</div>
                 <div>
@@ -152,10 +143,14 @@ function App() {
                   <p className="experience-company">Tata Consultancy Services · Chennai</p>
                   <p className="experience-client">Client: CNA Insurance · Chicago</p>
                   <ul className="experience-list">
-                    <li>Built reusable React, Redux, Material UI, and ag-Grid components, reducing development time by 25%.</li>
                     <li>Optimized grid filtering and pagination to improve data processing speed by 30%.</li>
-                    <li>Delivered secure insurance workflows for 5,000+ users with Okta authentication and role-based access.</li>
-                    <li>Maintained 90%+ test coverage and partnered across teams on REST API integrations, accessibility, and CI/CD.</li>
+                    <li>Built reusable React Hooks, Redux, Material UI, and ag-Grid components, cutting development time by 25%.</li>
+                    <li>Developed scalable insurance workflows used by 5,000+ users.</li>
+                    <li>Implemented Okta authentication and role-based access control across the application.</li>
+                    <li>Maintained 90%+ test coverage using Jest, React Testing Library, and Enzyme.</li>
+                    <li>Integrated REST APIs and collaborated with backend teams on data contracts and response handling.</li>
+                    <li>Delivered responsive, accessible interfaces with SCSS, React-Bootstrap, and a11y best practices.</li>
+                    <li>Worked in Agile/Scrum sprints and contributed to CI/CD pipeline integration.</li>
                   </ul>
                 </div>
               </div>
@@ -163,7 +158,7 @@ function App() {
           </div>
         </section>
 
-        <section className="details-section section-wrap">
+        <section className="details-section section-wrap" id="resume">
           <div className="details-column skills-column">
             <p className="eyebrow">TOOLKIT</p>
             <h2>What I work with</h2>
@@ -190,6 +185,16 @@ function App() {
               <p>Recognized at TCS for Best Team, Star of the Month, Service & Commitment, and On the Spot.</p>
               <p>Tamil (native) · Hindi (conversational) · English (fluent)</p>
             </div>
+          </div>
+        </section>
+
+        <section className="work-section section-wrap" id="work">
+          <div className="section-heading">
+            <div><p className="eyebrow">LEARNING PROJECTS <span className="eyebrow-divider">/</span> 05</p><h2>Things I’ve built to learn<span>.</span></h2></div>
+            <p className="section-note">Personal builds made for practice<br />and to showcase how I think.</p>
+          </div>
+          <div className="project-grid">
+            {projects.map((project, index) => <ProjectCard key={project.name} project={project} index={index} />)}
           </div>
         </section>
 

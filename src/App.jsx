@@ -1,3 +1,4 @@
+import React from 'react'
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
 import './App.css'
 
